@@ -28,6 +28,22 @@ function my_jquery_enqueue() {
  }
  
  add_action( 'wp_enqueue_scripts', 'load_my_styles_scripts', 20 );
+ 
+ 
+ // Critical Styles in the header
+ 
+ 
+/*
+ function internal_css_print() {
+    echo '<style type="text/css">';
+    include_once get_template_directory() . '/critical.css';
+    echo '</style>';
+}
+ 
+ 
+ 
+ add_action( 'wp_head', 'internal_css_print' );
+*/
 
 
 
