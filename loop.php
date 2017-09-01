@@ -16,6 +16,8 @@
 <?php endif; ?>
 
 
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
 <?php while ( have_posts() ) : the_post(); ?>
 
 
@@ -24,7 +26,9 @@
 		<?php edit_post_link( __( 'Edit', 'twentyten' ), '', '' ); ?>
 			
 		
-<?php endwhile; // end of loop ?> 
+<?php endwhile; // end of loop ?>
+
+<?php endif; ?>
 
 
 
