@@ -93,8 +93,28 @@ register_nav_menus(array(
 if (function_exists('register_sidebars')) {
 
     register_sidebar(array(
-        'name' => 'Sidebar',
+        'name' => 'Recent Posts',
         'id' => 'sidebar',
+        'description' => '',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="widgettitle">',
+        'after_title' => '</h3>'
+    ));
+    
+    register_sidebar(array(
+        'name' => 'Category',
+        'id' => 'category_sidebar',
+        'description' => '',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="widgettitle">',
+        'after_title' => '</h3>'
+    ));
+    
+    register_sidebar(array(
+        'name' => 'Archive',
+        'id' => 'archive_sidebar',
         'description' => '',
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div>',
@@ -139,9 +159,23 @@ add_filter('body_class', 'add_slug_body_class');
 -------------------------------------------------------------- */
 if (function_exists('acf_add_options_page')) {
     acf_add_options_page(array(
-        'page_title' => 'Theme General Settings',
-        'menu_title' => 'Theme Settings',
-        'menu_slug' => 'theme-general-settings',
+        'page_title' => 'Header Settings',
+        'menu_title' => 'Header Settings',
+        'menu_slug' => 'header-general-settings',
+        'capability' => 'edit_posts',
+        'redirect' => false
+    ));
+    acf_add_options_page(array(
+        'page_title' => 'Footer Settings',
+        'menu_title' => 'Footer Settings',
+        'menu_slug' => 'footer-general-settings',
+        'capability' => 'edit_posts',
+        'redirect' => false
+    ));
+    acf_add_options_page(array(
+        'page_title' => 'Review Settings',
+        'menu_title' => 'Review Settings',
+        'menu_slug' => 'review-general-settings',
         'capability' => 'edit_posts',
         'redirect' => false
     ));
